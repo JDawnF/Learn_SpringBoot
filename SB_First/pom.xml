@@ -12,6 +12,7 @@
     <artifactId>SB_First</artifactId>
     <modules>
         <module>boot-simple</module>
+        <module>boot-dive</module>
     </modules>
     <build>
         <plugins>
