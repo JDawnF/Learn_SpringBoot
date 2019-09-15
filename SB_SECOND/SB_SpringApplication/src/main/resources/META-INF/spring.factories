@@ -1,0 +1,15 @@
+# ApplicationContextInitializer 加载应用上下文初始器实现配置
+org.springframework.context.ApplicationContextInitializer=\
+com.baichen.springapplication.context.AfterHelloWorldApplicationContextInitializer,\
+com.baichen.springapplication.context.HelloWorldApplicationContextInitializer
+
+# ApplicationListener 加载应用事件监听器实现配置
+org.springframework.context.ApplicationListener=\
+com.baichen.springapplication.listener.AfterHelloWorldApplicationListener,\
+com.baichen.springapplication.listener.HelloWorldApplicationListener,\
+com.baichen.springapplication.listener.BeforeConfigFileApplicationListener
+
+# SpringApplicationRunListener 加载 SpringApplication 运行监听器实现配置
+org.springframework.boot.SpringApplicationRunListener=\
+com.baichen.springapplication.run.HelloWorldRunListener
+ 
