@@ -1,6 +1,6 @@
-package com.imooc.web.method.support;
+package com.baichen.web.method.support;
 
-import com.imooc.web.http.converter.properties.PropertiesHttpMessageConverter;
+import com.baichen.web.http.converter.properties.PropertiesHttpMessageConverter;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.server.ServletServerHttpRequest;
@@ -15,9 +15,9 @@ import java.util.Properties;
 
 /**
  * {@link Properties 类型} {@link HandlerMethodArgumentResolver}
- *
- * @author 小马哥
- * @since 2018/5/27
+ * 扩展rest内容协商，自定义HandlerMethodArgumentResolver
+ * @author baichen
+ * @since 2019/9/21
  */
 public class PropertiesHandlerMethodArgumentResolver implements HandlerMethodArgumentResolver {
     @Override
@@ -31,13 +31,10 @@ public class PropertiesHandlerMethodArgumentResolver implements HandlerMethodArg
 
         // 复用 PropertiesHttpMessageConverter
         PropertiesHttpMessageConverter converter = new PropertiesHttpMessageConverter();
-
-        ServletWebRequest servletWebRequest = (ServletWebRequest) webRequest;
+        ServletWebRequest servletWebRequest = (ServletWebRequest) webRequest;//强转为ServletWebRequest
         // Servlet Request API
         HttpServletRequest request = servletWebRequest.getRequest();
-
         HttpInputMessage httpInputMessage = new ServletServerHttpRequest(request);
-
         return converter.read(null, null, httpInputMessage);
     }
 }

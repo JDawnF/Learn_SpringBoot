@@ -1,4 +1,4 @@
-package com.imooc.web.controller;
+package com.baichen.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,8 +9,8 @@ import java.util.Properties;
 /**
  * {@link Properties} {@link RestController}
  *
- * @author 小马哥
- * @since 2018/5/27
+ * @author baichen
+ * @since 2019/9/21
  */
 //@RestController
 @Controller

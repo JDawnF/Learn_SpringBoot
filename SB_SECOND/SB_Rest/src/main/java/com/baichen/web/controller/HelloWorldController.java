@@ -1,4 +1,4 @@
-package com.imooc.web.controller;
+package com.baichen.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 /**
  * HelloWorld {@link Controller}
  *
- * @author 小马哥
+ * @author baichen
  * @since 2018/5/28
  */
 @Controller

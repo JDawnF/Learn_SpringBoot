@@ -1,4 +1,4 @@
-package com.imooc.web.http.converter.properties;
+package com.baichen.web.http.converter.properties;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpInputMessage;
@@ -16,9 +16,9 @@ import java.util.Properties;
 
 /**
  * {@link Properties} {@link HttpMessageConverter} 实现
- *
- * @author 小马哥
- * @since 2018/5/27
+ * 扩展REST 内容协商，自定义HttpMessageConverter，这里是content-type为text/properties时使用的
+ * @author baichen
+ * @since 2019/9/21
  */
 public class PropertiesHttpMessageConverter extends AbstractGenericHttpMessageConverter<Properties> {
 

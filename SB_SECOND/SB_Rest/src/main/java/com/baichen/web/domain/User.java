@@ -1,10 +1,10 @@
-package com.imooc.web.domain;
+package com.baichen.web.domain;
 
 /**
  *  用户模型
  *
- * @author 小马哥
- * @since 2018/5/27
+ * @author baichen
+ * @since 2019/9/21
  */
 public class User {
 

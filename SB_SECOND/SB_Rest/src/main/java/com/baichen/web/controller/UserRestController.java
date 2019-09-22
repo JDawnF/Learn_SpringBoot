@@ -1,6 +1,6 @@
-package com.imooc.web.controller;
+package com.baichen.web.controller;
 
-import com.imooc.web.domain.User;
+import com.baichen.web.domain.User;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * User {@link RestController}
  *
- * @author 小马哥
- * @since 2018/5/27
+ * @author baichen
+ * @since 2019/9/21
  */
 @RestController
 public class UserRestController {

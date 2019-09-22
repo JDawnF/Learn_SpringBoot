@@ -11,7 +11,7 @@
 
 <script>
 $(document).ready(function(){
-     // Ajax 跨域 GET 请求
+     // Ajax 跨域 GET 请求，自定义的域名
      $.get( "http://api.rest.org:8080/hello", function( data ) {
                 alert( data );
                 $( "#message" ).html( data );

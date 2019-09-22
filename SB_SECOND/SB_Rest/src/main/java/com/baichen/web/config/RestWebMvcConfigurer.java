@@ -1,7 +1,7 @@
-package com.imooc.web.config;
+package com.baichen.web.config;
 
-import com.imooc.web.method.support.PropertiesHandlerMethodArgumentResolver;
-import com.imooc.web.method.support.PropertiesHandlerMethodReturnValueHandler;
+import com.baichen.web.method.support.PropertiesHandlerMethodArgumentResolver;
+import com.baichen.web.method.support.PropertiesHandlerMethodReturnValueHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -18,14 +18,14 @@ import java.util.List;
 /**
  * REST {@link WebMvcConfigurer} 实现
  *
- * @author 小马哥
- * @since 2018/5/27
+ * @author baichen
+ * @since 2019/9/21
  */
 @Configuration
 public class RestWebMvcConfigurer implements WebMvcConfigurer {
 
     @Autowired
-    private RequestMappingHandlerAdapter requestMappingHandlerAdapter;
+    private RequestMappingHandlerAdapter requestMappingHandlerAdapter;  // 改变自定义的HandlerMethodArgumentResolver的顺序
 
     @PostConstruct
     public void init() {
@@ -67,8 +67,9 @@ public class RestWebMvcConfigurer implements WebMvcConfigurer {
 
     }
 
+    // 自定义converter
     public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
-        // 不建议添加到 converters 的末尾
+        // 如果是直接添加的话，则会添加到 converters 的末尾，不建议这样子，因为这样子可能会先加载了前面的converter，然后被略过
 //        converters.add(new PropertiesHttpMessageConverter());
 //        converters.set(0, new PropertiesHttpMessageConverter()); // 添加到集合首位
     }

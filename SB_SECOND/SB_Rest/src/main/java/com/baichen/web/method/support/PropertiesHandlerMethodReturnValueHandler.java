@@ -1,6 +1,6 @@
-package com.imooc.web.method.support;
+package com.baichen.web.method.support;
 
-import com.imooc.web.http.converter.properties.PropertiesHttpMessageConverter;
+import com.baichen.web.http.converter.properties.PropertiesHttpMessageConverter;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.HttpOutputMessage;
 import org.springframework.http.MediaType;
@@ -16,8 +16,8 @@ import java.util.Properties;
 
 /**
  * {@link Properties} {@link HandlerMethodReturnValueHandler} 实现
- *
- * @author 小马哥
+ * 扩展rest内容协商，自定义HandlerMethodReturnValueHandler
+ * @author baichen
  * @since 2018/5/28
  */
 public class PropertiesHandlerMethodReturnValueHandler implements HandlerMethodReturnValueHandler {
@@ -31,7 +31,6 @@ public class PropertiesHandlerMethodReturnValueHandler implements HandlerMethodR
     @Override
     public void handleReturnValue(Object returnValue, MethodParameter returnType,
                                   ModelAndViewContainer mavContainer, NativeWebRequest webRequest) throws Exception {
-
         // 强制装换
         Properties properties = (Properties) returnValue;
         // 复用 PropertiesHttpMessageConverter
@@ -49,7 +48,7 @@ public class PropertiesHandlerMethodReturnValueHandler implements HandlerMethodR
         HttpOutputMessage message = new ServletServerHttpResponse(response);
         // 通过 PropertiesHttpMessageConverter 输出
         converter.write(properties, mediaType, message);
-        // 告知 Spring Web MVC 当前请求已经处理完毕
+        // 告知 Spring Web MVC 当前请求已经处理完毕，否则会报错
         mavContainer.setRequestHandled(true);
     }
 }
