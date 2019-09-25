@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
  * {@link HelloWorldController} 通知
  *
  * @author baichen
- * @since 2018/5/21
+ * @since 2019/9/22
  */
 @ControllerAdvice(assignableTypes = HelloWorldController.class)
 public class HelloWorldControllerAdvice {

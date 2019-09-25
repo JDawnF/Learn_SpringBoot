@@ -11,6 +11,14 @@
     <packaging>pom</packaging>
     <modules>
         <module>SB_AutoConfigure</module>
+        <module>SB_SpringApplication</module>
+        <module>overview</module>
+        <module>SB_webmvc</module>
+        <module>SB_springboot-webmvc</module>
+        <module>SB_View</module>
+        <module>SB_Rest</module>
+        <module>Spring_Servlet</module>
+        <module>SB_Servlet</module>
     </modules>
     <artifactId>SB_SECOND</artifactId>
 
