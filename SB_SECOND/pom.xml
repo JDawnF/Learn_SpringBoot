@@ -19,6 +19,7 @@
         <module>SB_Rest</module>
         <module>Spring_Servlet</module>
         <module>SB_Servlet</module>
+        <module>SB_Reactive</module>
     </modules>
     <artifactId>SB_SECOND</artifactId>
 
