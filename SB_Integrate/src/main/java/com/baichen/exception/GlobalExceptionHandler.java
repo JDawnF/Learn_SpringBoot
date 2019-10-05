@@ -50,8 +50,8 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * @Title: IMoocExceptionHandler.java
-     * @Package com.imooc.exception
+     * @Title: baichenExceptionHandler.java
+     * @Package com.baichen.exception
      * @Description: 判断是否是ajax请求
      */
     public static boolean isAjax(HttpServletRequest httpRequest) {

@@ -1,4 +1,4 @@
-package com.baichen.controller;
+package com.baichen.interceptor;
 
 import com.baichen.pojo.User;
 import org.springframework.stereotype.Controller;
@@ -10,17 +10,17 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 /**
- * @Date: 2019-10-04 18:48
+ * @Date: 2019-10-05 10:53
  * @Author: baichen
- * @Description 整合 Thymeleaf
+ * @Description
  */
 @Controller
-@RequestMapping("th")
-public class ThymeleafController {
+@RequestMapping("/two")
+public class TwoController {
 
     @RequestMapping("/index")
     public String index(ModelMap map) {
-        map.addAttribute("name", "thymeleaf-baichen");
+        map.addAttribute("name", "itzixi22");
         return "thymeleaf/index";
     }
 
@@ -31,50 +31,36 @@ public class ThymeleafController {
 
     @RequestMapping("test")
     public String test(ModelMap map) {
-
-        User u = new User();
-        u.setName("superadmin");
-        u.setAge(10);
-        u.setPassword("123465");
-        u.setBirthday(new Date());
-        u.setNote("<font color='green'><b>hello baichen</b></font>");
-
-        map.addAttribute("user", u);
+        User user = new User();
+        user.setAge(18);
+        user.setName("manager");
+        user.setPassword("123456");
+        user.setBirthday(new Date());
+        map.addAttribute("user", user);
 
         User u1 = new User();
         u1.setAge(19);
-        u1.setName("baichen");
+        u1.setName("itzixi");
         u1.setPassword("123456");
         u1.setBirthday(new Date());
 
         User u2 = new User();
         u2.setAge(17);
-        u2.setName("baichen");
+        u2.setName("LeeCX");
         u2.setPassword("123456");
         u2.setBirthday(new Date());
 
         List<User> userList = new ArrayList<>();
-        userList.add(u);
+        userList.add(user);
         userList.add(u1);
         userList.add(u2);
         map.addAttribute("userList", userList);
-        return "thymeleaf/test";   // 跳转到对应的页面
+        return "thymeleaf/test";
     }
 
     @PostMapping("postform")
     public String postform(User user) {
-
-        System.out.println("姓名：" + user.getName());
-        System.out.println("年龄：" + user.getAge());
-
-        return "redirect:/th/test";  // 跳转到controller中对应的路径
-    }
-
-    @RequestMapping("showerror")
-    public String showerror(User user) {
-
-        int a = 1 / 0;
-
+        System.out.println(user.getName());
         return "redirect:/th/test";
     }
 }
